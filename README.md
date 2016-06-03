@@ -84,7 +84,7 @@ let thirdNumber = numbers[2]
  // ["Sarah", "Bran", "Sansa"]
 ```
 
-* Referring to `count` : 
+* Referring to `count`, they should be exposed to the following where it is explained thoroughly what is going on: 
 
 ```swift
 let rainbowColors = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"]
@@ -93,8 +93,54 @@ let rainbowColors = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Viol
  // 7
  
  print("There are \(numberOfColors) colors in the rainbow.")
- // prints "There are 7 colors in the rainbow."te
+ // prints "There are 7 colors in the rainbow.
+ 
+ if rainbowColors.count > 5 {
+    print("There are more than 5 colors in a rainbow.")
+ }
+ //prints "There are more than 5 colors in a rainbow."
 ```
+
+* Referring to `isEmpty` - I like the idea of stepping them through the following two examples:
+
+![deliLine](http://i.imgur.com/ivgaSon.png?1)
+```swift
+ var deliLine = [
+    "Albert Einstein",
+    "Isaac Newton",
+    "Galileo Galilei",
+    "Marie Curie"
+ ]
+ 
+ if deliLine.isEmpty {
+    print("The deli line is empty")
+ } else {
+    print("There are people waiting to eat!")
+ }
+ 
+ // prints "There are people waiting to eat!"
+```
+![Moons](http://i.imgur.com/reNsnn6.png?1)
+```swift
+ let moonsOfJupiter = [
+    "Europa",
+    "Ganymedge",
+    "Io",
+    "Callisto"
+]
+ 
+ if !moonsOfJupiter.isEmpty {
+    for moon in moonsOfJupiter {
+        print("\(moon) is a moon orbiting Jupiter.")
+    }
+ }
+ 
+ // Europa is a moon orbiting Jupiter.
+ // Ganymede is a moon orbiting Jupiter.
+ // Io is a moon orbiting Jupiter.
+ // Callisto is a moon orbiting Jupiter.
+```
+
 
 
 <a href='https://learn.co/lessons/ArrayMethods' data-visibility='hidden'>View this lesson on Learn.co</a>
