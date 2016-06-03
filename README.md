@@ -7,36 +7,23 @@
 
 ## Learning Objectives - The student should be able to..
 
+* `append()` - add element to the end of the array.
+* `insert(_:atIndex:)` - insert an element at the specified index.
+* `removeAtIndex()` - remove an element at the specified index.
+* *Subscript Syntax* to change elements at a specified index and access the element at a specified index to store in a variable.
 
 ```swift
-var names = ["Jim", "Mike", "Paul"]
-names.insert("Brian", atIndex: 3)
+var numbers = [5, 2, 3]
+numbers[0] = 1
 
-
-let index = names.indexOf("Jim")!
-names[index] = "No longer Jim"
-
-
-
-
-// append()
-// contains()
-// insert(_:atIndex:)
-// indexOf()
-
-
-
-// count
-// isEmpty
-
-names.count
-names.isEmpty
-
-
-// appendContentsOf()
-// removeAll()
-// popLast()
+let thirdNumber = numbers[2]
+// 3
 ```
+
+* `count` - Returns the number of elements in the array.
+* `isEmpty` - Returns true if the array is empty.
+
+
 
 ## What the student can do at this point 
 
@@ -52,7 +39,62 @@ names.isEmpty
 
 ## Outline / Notes
 
-*  Need to complete this. The student will not have read about structs or classes (yet) so I don't want to go to deep in an explanation of computed properties and instance methods but I think we might need to give them a short definition as they will be using them fully in this reading.
-* I like the idea of having them open a playground file typing out the various properties and methods I want to discuss above (which I need to outline better) and see what the return types are, get familiar with the signature and what these methods want to take in as arguments.
+*  The student will not have read about structs or classes (yet) so I don't want to go too deep in an explanation of computed properties and instance methods but I think we might need to give them a short definition as they will be using them fully in this reading.
+* I think it's important for them to know that they must use var here in that we need the array to be mutable in order to add anything to it. Show them a screenshot of the error they would receive if they tried using append where toys would be declared with let.
+
+```swift
+ var toys = ["Woody", "Buzz Lightyear", "Mr. Potato Head", "Slinky Dog"]
+ toys.append("Rex")
+ 
+ // ["Woody", "Buzz Lightyear", "Mr. Potato Head", "Slinky Dog", "Rex"]
+ ```
+* Speaking about the `insert(_:atIndex:)` method. I think it's important for them to see and recognize that calling the method like I did below inserting an element at index 0 will NOT replace the element that is currently there, it will insert it at that specific index and shift everything to the right.
+
+```swift
+ toys.insert("Tom Hanks", atIndex: 0)
+ 
+ // ["Tom Hanks", "Woody", "Buzz Lightyear", "Mr. Potato Head", "Slinky Dog", "Rex"]
+ ```
+ 
+* They can then remove an element at a specified index consideirng now that Tom Hanks is not a character in the film, he is the voice of Woody.... so we need to remove him.
+
+```swift
+ toys.removeAtIndex(0)
+ 
+ // ["Woody", "Buzz Lightyear", "Mr. Potato Head", "Slinky Dog", "Rex"]
+ ```
+ 
+* If instead they wanted to change an element at a specific index, they would so so as follows:
+
+```swift
+ var names = ["James", "Sarah", "Bran", "Sansa"]
+ 
+ names[0] = "Jim"
+
+ // ["Jim", "Sarah", "Bran", "Sansa"]
+```
+
+* I think it's important for them to see the error they would receive IF they tried updating a value at a certain index that is out of bounds. Or if they try accessing an element that could be out of bounds. They might then wonder HOW they can in fact make sure they are within bounds and we COULD show them this but I'm very very reluctant in explaining to them exactly what is going on here as the next lesson will introduce optionals (which is usually the hardest thing for them to grasp). **OPINION WANTED**: Do you think we should at the very least show them something like this?:
+
+```swift
+ if let index = names.indexOf("Jim") {
+    names.removeAtIndex(index)
+ }
+ 
+ // ["Sarah", "Bran", "Sansa"]
+```
+
+* Referring to `count` : 
+
+```swift
+let rainbowColors = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"]
+ 
+ let numberOfColors = rainbowColors.count
+ // 7
+ 
+ print("There are \(numberOfColors) colors in the rainbow.")
+ // prints "There are 7 colors in the rainbow."te
+```
+
 
 <a href='https://learn.co/lessons/ArrayMethods' data-visibility='hidden'>View this lesson on Learn.co</a>
