@@ -142,17 +142,17 @@ let rainbowColors = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Viol
  // Callisto is a moon orbiting Jupiter.
 ```
 
----
+--------------------------------------------------------------------------------
 
-In the last lesson you briefly saw a 'method', which can be thought of as a pre-written function that helps you accomplish common tasks. They are contextual, in that a method that works on an array may not work for a String for example.
+In the last lesson you briefly saw a 'method', which can be thought of as a pre-written function that helps you accomplish common tasks. They are contextual, in that, for example, a method that works on an array may not work for a String.
 
-The method you saw in the last example was `.append()` to add a value to the end of an array. This could be done in alternative ways, all of which would involve far more code and calculation, I think you'll agree that `.append()` is far more convenient. There are many other methods for arrays, and in this lesson we'll look at some others.
+The method you saw in the last example was `.append()` that adds a value to the end of an array. You could achieve this in several ways which would involve far more code and calculation, I think you'll agree that `.append()` is far more convenient. There are many other methods for arrays, and in this lesson you'll look at some others.
 
 ## Enumeration
 
 Before going any further, there's one other array concept to introduce.
 
-Say you have a list of instruction steps, if steps need to be added, removed, or changed at a particular index in the array, then you need to know what the index of the value is. When you have a simple list of unchanging values, then maybe this is simple, but with a larger list processed in a loop, there is another way, you can use the `.enumerate` method to have not only teh value of the current loop index, but the index position itself.
+Say you have a list of instruction steps, if steps need to be added, removed, or changed at a particular index in the array, then you need to know what the index of the value is. When you have a simple list of unchanging values, then maybe this is simple, but with a larger list processed in a loop, there is another way, you can use the `.enumerate` method to have not only the value of the current loop index, but the index position itself.
 
 ```swift
 var toMakeTea = [
@@ -174,7 +174,48 @@ for (index, step) in toMakeTea.enumerate() {
 // 5. Drink
 ```
 
-In this example you first create an array of the steps to make tea (and yes, there are intentional mistakes!) and add a couple of extra things to the `for in` loop. First inside the brackets you add variables to hold the index and value variables, the names of these are arbitary, `index` is of course a useful name, but it could be called whatever you want. At the end of the array name you want to iterate through, add the `.enumerate()` method. Now inside the loop you have access to the value in the current iteration as well as it's index in teh array. In this example '1' is added to the index value as unlike computers, humans don't count from 0!
+In this example you first create an array of the steps to make tea (and yes, there are intentional mistakes!) and add a couple of extra things to the `for in` loop. First inside the brackets you add variables to hold the index and value variables, the names of these are up to you. Using `index` is of course a useful name, but you can call it whatever you want. At the end of the array variable you want to iterate through, add the `.enumerate()` method. Now inside the loop you have access to the value in the current iteration as well as it's index in the array. Above, you add '1' to the index value as unlike computers, humans don't count from 0!
+
+## Check an array has values
+
+Before undertaking any further actions, it's a good idea to check the array you would like to work with actually has any values in it. Of course there's a method to help, `.isEmpty`.
+
+```swift
+if toMakeTea.isEmpty {
+   print("No tea yet :(")
+} else {
+   print("Ready to make tea! :)")
+}
+```
+
+This method checks to see if the array contains any values, but the array still needs to actually exist (i.e. it's you have initiated it) in the first place.
+
+It might be a good idea to add this check to your array before any other functionality we look at in the rest of the lesson, wrapping it in `if else` statements.
+
+You can reverse a logical check with the `!` symbol:
+
+```swift
+if !toMakeTea.isEmpty {
+    print("Ready to make tea! :)")
+} else {
+    print("No tea yet :(")
+}
+```
+
+This may seem confusing syntax, but it may feel more natural to start with a preferred or default status and then handle the alternative or fallback status.
+
+## Array Size
+
+There are some methods that help you access certain properties of an array, one is to find the size of an array, or the number of values it contains.
+
+```swift
+print(toMakeTea.count)
+// 5
+```
+
+Just to confuse matters, `.count` returns the number of items in an array starting from 1, not 0. This makes sense, but might confuse you the first few times you use the method.
+
+As you try some of the other methods mentioned in the rest of this tutorial, try printing `count` throughout your code to see the affect on the array size.
 
 ## Add Items to an Array
 
@@ -188,12 +229,63 @@ print(toMakeTea)
 
 The `.append()` method adds a new value (which has to also be the same type as every other value) to the end of the array.
 
-You have also forgotten an important step at the begining of the list, adding water to the kettle, so let's add it:
+You have also forgotten an important step at the beginning of the list, adding water to the kettle, so let's add it:
 
 ```swift
 toMakeTea.insert("Add water to kettle", atIndex: 0)
+
 print(toMakeTea)
 // ["Add water to kettle", "Boil Water", "Add tea bag to cup", "Wait ten minutes", "Add Milk", "Drink", "Enjoy!"]
 ```
+
+Note that this doesn't replace the item at index `0`, but **inserts** it, shifting all the elements to the right of it one place in the index.
+
+## Change items in an array
+
+Uh oh, unless you like strong tea, waiting ten minutes is way too long, so let's change that value:
+
+```swift
+toMakeTea[3] = "Wait 3-5 minutes"
+
+print(toMakeTea)
+// ["Add water to kettle", "Boil Water", "Add tea bag to cup", "Wait 3-5 minutes", "Add Milk", "Drink", "Enjoy!"]
+```
+
+In this example, you use similar syntax from lesson xx to assign the string of text on the right hand side of the `=` to the index in the array on the left hand side, in this case, position `3`.
+
+## Removing items from an array
+
+Drinking tea is a serious business, so you've decided to remove the 'Enjoy!' step. Setting that index in the array's value to be empty, i.e. "", is not enough to remove it, but there's a method that helps.
+
+```swift
+toMakeTea.removeAtIndex(6)
+
+print(toMakeTea)
+// ["Add water to kettle", "Boil Water", "Add tea bag to cup", "Wait 3-5 minutes", "Add Milk", "Drink"]
+```
+
+The `removeAtIndex()` method removes the value in the array at position 6 and then shuffles all the items to the right of the value to the left, which in this case, is no items.
+
+Note that if you try to access or change the value of an index in the array that doesn't exist, you will receive an error. Try these commands in a Playground and see:
+
+```swift
+toMakeTea.removeAtIndex(6)
+print(toMakeTea[6])
+// Error
+toMakeTea.removeAtIndex(6)
+// Error
+```
+
+To prevent this error, you could combine the code above with some `if else` statements and the `count` method you saw earlier in the lesson. For example:
+
+```swift
+if toMakeTea.count > 6 {
+    toMakeTea.removeAtIndex(6)
+} else {
+    print("There is no value at index 6")
+}
+```
+
+This checks to see if the size of the array is greater than 6, and if so removes the value at index 6.
 
 [View this lesson on Learn.co](https://learn.co/lessons/ArrayMethods)
