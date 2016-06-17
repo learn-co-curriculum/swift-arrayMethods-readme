@@ -144,15 +144,27 @@ let rainbowColors = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Viol
 
 --------------------------------------------------------------------------------
 
-In the last lesson you briefly saw a 'method', which can be thought of as a pre-written function that helps you accomplish common tasks. They are contextual, in that, for example, a method that works on an array may not work for a String.
+In Unit 1 you saw the following:
 
-The method you saw in the last example was `.append()` that adds a value to the end of an array. You could achieve this in several ways which would involve far more code and calculation, I think you'll agree that `.append()` is far more convenient. There are many other methods for arrays, and in this lesson you'll look at some others.
+```swift
+let greeting = "Hello"
+let loudGreeting = greeting.uppercaseString
+
+print(loudGreeting)
+// prints "HELLO"
+```
+
+This was an example of a 'method', which can be thought of as a pre-written function that helps you accomplish common tasks.
+
+You also saw `.append` in the last lesson, which is another method. Whilst there are some common methods, many are contextual and only work on particular types. For example, a method like `.append` that works on an array will not work for a String, and `.uppercaseString` will not work on an array.
+
+The `.append()` method adds a value to the end of an array. You could achieve this in several ways which would involve far more code and calculation, I think you'll agree that `.append()` is far more convenient. There are many other methods for arrays, and in this lesson you'll look at some others.
 
 ## Enumeration
 
 Before going any further, there's one other array concept to introduce.
 
-Say you have a list of instruction steps, if steps need to be added, removed, or changed at a particular index in the array, then you need to know what the index of the value is. When you have a simple list of unchanging values, then maybe this is simple, but with a larger list processed in a loop, there is another way, you can use the `.enumerate` method to have not only the value of the current loop index, but the index position itself.
+Say you have an array of string literals which represent a list of instructions to create great tea. If you want to print these instructions, you would need to do the following:
 
 ```swift
 var toMakeTea = [
@@ -163,15 +175,30 @@ var toMakeTea = [
     "Drink"
 ]
 
+print("1\. \(toMakeTea[0])")
+print("2\. \(toMakeTea[1])")
+// and so on
+
+// prints "1\. Boil Water"
+// prints "2\. Add tea bag to cup"
+// etc
+```
+
+This way of accomplishing the task is incredibly tedious. Knowing how a `for-in` loop works, you can iterate over each value in the array of strings. You also the index of the value in the array because you want to display numbered instructions.
+
+If steps need to be added, removed, or changed at a particular index in the array, then you also need to know what the index of the value is. When you have a simple list of unchanging values, then maybe this is simple, but with a larger list processed in a loop, there is another way, the `.enumerate` method that you call on an array variable.
+
+```swift
+
 for (index, step) in toMakeTea.enumerate() {
     print("\(index + 1). \(step)")
 }
 
-// 1. Boil Water
-// 2. Add tea bag to cup
-// 3. Wait ten minutes
-// 4. Add Milk
-// 5. Drink
+// 1\. Boil Water
+// 2\. Add tea bag to cup
+// 3\. Wait ten minutes
+// 4\. Add Milk
+// 5\. Drink
 ```
 
 In this example you first create an array of the steps to make tea (and yes, there are intentional mistakes!) and add a couple of extra things to the `for in` loop. First inside the brackets you add variables to hold the index and value variables, the names of these are up to you. Using `index` is of course a useful name, but you can call it whatever you want. At the end of the array variable you want to iterate through, add the `.enumerate()` method. Now inside the loop you have access to the value in the current iteration as well as it's index in the array. Above, you add '1' to the index value as unlike computers, humans don't count from 0!
@@ -186,9 +213,13 @@ if toMakeTea.isEmpty {
 } else {
    print("Ready to make tea! :)")
 }
+
+// prints "No tea yet :("
 ```
 
 This method checks to see if the array contains any values, but the array still needs to actually exist (i.e. it's you have initiated it) in the first place.
+
+![Array not Initialized](not-init.png)
 
 It might be a good idea to add this check to your array before any other functionality we look at in the rest of the lesson, wrapping it in `if else` statements.
 
@@ -213,7 +244,7 @@ print(toMakeTea.count)
 // 5
 ```
 
-Just to confuse matters, `.count` returns the number of items in an array starting from 1, not 0. This makes sense, but might confuse you the first few times you use the method.
+Just to confuse matters, `.count` returns the number of items in an array starting from 1, not 0\. This makes sense, but might confuse you the first few times you use the method.
 
 As you try some of the other methods mentioned in the rest of this tutorial, try printing `count` throughout your code to see the affect on the array size.
 
