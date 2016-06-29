@@ -6,33 +6,11 @@
 
 ## Learning Objectives - The student should be able to..
 
-- `append()` - add element to the end of the array.
-- `insert(_:atIndex:)` - insert an element at the specified index.
-- `removeAtIndex()` - remove an element at the specified index.
-- _Subscript Syntax_ to change elements at a specified index and access the element at a specified index to store in a variable.
+- Add element to the end of the array using `append()`
+- Insert an element at the specified index using `insert(_:atIndex:)`
+- Remove an element at the specified index using `removeAtIndex()`
+- Use _Subscript Syntax_ to change elements at a specified index and access the element at a specified index to store in a variable.
 
-```swift
-var numbers = [5, 2, 3]
-numbers[0] = 1
-
-let thirdNumber = numbers[2]
-// 3
-```
-
-- `count` - Returns the number of elements in the array.
-- `isEmpty` - Returns true if the array is empty.
-
-## What the student can do at this point
-
-- Create variables and constants
-- Is familiar with type annotations, type inference and string interpolation.
-- Can create functions with return types.
-- Is familiar with the String, Int, Double, and Bool type.
-- Can perform arithmetic operations on Int and Double.
-- Understands if and else clause statements.
-- Can create and use Arrays.
-- Can iterate over an Array using a for-in loop.
-- Can iterate over an Array calling enumerate().
 
 ## Outline / Notes
 
