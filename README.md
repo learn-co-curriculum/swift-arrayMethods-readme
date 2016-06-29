@@ -12,117 +12,7 @@
 - Use _Subscript Syntax_ to change elements at a specified index and access the element at a specified index to store in a variable.
 
 
-## Outline / Notes
-
-- The student will not have read about structs or classes (yet) so I don't want to go too deep in an explanation of computed properties and instance methods but I think we might need to give them a short definition as they will be using them fully in this reading.
-- I think it's important for them to know that they must use var here in that we need the array to be mutable in order to add anything to it. Show them a screenshot of the error they would receive if they tried using append where toys would be declared with let.
-
-```swift
- var toys = ["Woody", "Buzz Lightyear", "Mr. Potato Head", "Slinky Dog"]
- toys.append("Rex")
-
- // ["Woody", "Buzz Lightyear", "Mr. Potato Head", "Slinky Dog", "Rex"]
-```
-
-- Speaking about the `insert(_:atIndex:)` method. I think it's important for them to see and recognize that calling the method like I did below inserting an element at index 0 will NOT replace the element that is currently there, it will insert it at that specific index and shift everything to the right.
-
-```swift
- toys.insert("Tom Hanks", atIndex: 0)
-
- // ["Tom Hanks", "Woody", "Buzz Lightyear", "Mr. Potato Head", "Slinky Dog", "Rex"]
-```
-
-- They can then remove an element at a specified index consideirng now that Tom Hanks is not a character in the film, he is the voice of Woody.... so we need to remove him.
-
-```swift
- toys.removeAtIndex(0)
-
- // ["Woody", "Buzz Lightyear", "Mr. Potato Head", "Slinky Dog", "Rex"]
-```
-
-- If instead they wanted to change an element at a specific index, they would so so as follows:
-
-```swift
- var names = ["James", "Sarah", "Bran", "Sansa"]
-
- names[0] = "Jim"
-
- // ["Jim", "Sarah", "Bran", "Sansa"]
-```
-
-- I think it's important for them to see the error they would receive IF they tried updating a value at a certain index that is out of bounds. Or if they try accessing an element that could be out of bounds. They might then wonder HOW they can in fact make sure they are within bounds and we COULD show them this but I'm very very reluctant in explaining to them exactly what is going on here as the next lesson will introduce optionals (which is usually the hardest thing for them to grasp). **OPINION WANTED**: Do you think we should at the very least show them something like this?:
-
-```swift
- if let index = names.indexOf("Jim") {
-    names.removeAtIndex(index)
- }
-
- // ["Sarah", "Bran", "Sansa"]
-```
-
-- Referring to `count`, they should be exposed to the following where it is explained thoroughly what is going on:
-
-```swift
-let rainbowColors = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"]
-
- let numberOfColors = rainbowColors.count
- // 7
-
- print("There are \(numberOfColors) colors in the rainbow.")
- // prints "There are 7 colors in the rainbow.
-
- if rainbowColors.count > 5 {
-    print("There are more than 5 colors in a rainbow.")
- }
- //prints "There are more than 5 colors in a rainbow."
-```
-
-- Referring to `isEmpty` - I like the idea of stepping them through the following two examples:
-
-![deliLine](http://i.imgur.com/ivgaSon.png?1)
-
-```swift
- var deliLine = [
-    "Albert Einstein",
-    "Isaac Newton",
-    "Galileo Galilei",
-    "Marie Curie"
- ]
-
- if deliLine.isEmpty {
-    print("The deli line is empty")
- } else {
-    print("There are people waiting to eat!")
- }
-
- // prints "There are people waiting to eat!"
-```
-
-![Moons](http://i.imgur.com/reNsnn6.png?1)
-
-```swift
- let moonsOfJupiter = [
-    "Europa",
-    "Ganymedge",
-    "Io",
-    "Callisto"
-]
-
- if !moonsOfJupiter.isEmpty {
-    for moon in moonsOfJupiter {
-        print("\(moon) is a moon orbiting Jupiter.")
-    }
- }
-
- // Europa is a moon orbiting Jupiter.
- // Ganymede is a moon orbiting Jupiter.
- // Io is a moon orbiting Jupiter.
- // Callisto is a moon orbiting Jupiter.
-```
-
---------------------------------------------------------------------------------
-
-In Unit 1 you saw the following:
+Take a look at the following:
 
 ```swift
 let greeting = "Hello"
@@ -132,7 +22,7 @@ print(loudGreeting)
 // prints "HELLO"
 ```
 
-This was an example of a 'method', which can be thought of as a pre-written function that helps you accomplish common tasks.
+This is an example of a 'method', which can be thought of as a pre-written function that helps you accomplish common tasks.
 
 You also saw `.append` in the last lesson, which is another method. Whilst there are some common methods, many are contextual and only work on particular types. For example, a method like `.append` that works on an array will not work for a String, and `.uppercaseString` will not work on an array.
 
