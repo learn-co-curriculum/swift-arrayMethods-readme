@@ -87,7 +87,7 @@ if toMakeTea.isEmpty {
 
 This method checks to see if the array contains any values, but the array still needs to actually exist (i.e. it's you have initiated it) in the first place.
 
-![Array not Initialized](not-init.png)
+![Array not Initialized](http://i.imgur.com/x82qniD.png)
 
 It might be a good idea to add this check to your array before any other functionality we look at in the rest of the lesson, wrapping it in `if else` statements.
 
