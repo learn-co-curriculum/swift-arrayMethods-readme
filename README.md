@@ -1,16 +1,16 @@
 # Array Methods
 
-![Drawing](http://www.achievement.org/achievers/ang0/large/ang0-003.jpg)
+![Drawing](http://i.imgur.com/C7v4Nuy.jpg?1)
 
-> We delight in the beauty of the butterfly, but rarely admit the changes it has gone through to achieve that beauty.
+> We delight in the beauty of the butterfly, but rarely admit the changes it has gone through to achieve that beauty. -[Maya Angelou](https://en.wikipedia.org/wiki/Maya_Angelou)
 
-## Learning Objectives - The student should be able to..
-
+## Learning Objectives 
 - Add element to the end of the array using `append()`
 - Insert an element at the specified index using `insert(_:atIndex:)`
 - Remove an element at the specified index using `removeAtIndex()`
 - Use _Subscript Syntax_ to change elements at a specified index and access the element at a specified index to store in a variable.
 
+# Methods
 
 Take a look at the following:
 
