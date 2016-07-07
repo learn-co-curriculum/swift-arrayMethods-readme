@@ -52,7 +52,7 @@ print("2\. \(toMakeTea[1])")
 // etc
 ```
 
-This way of accomplishing the task is incredibly tedious. Knowing how a `for-in` loop works, you can iterate over each value in the array of strings. You also the index of the value in the array because you want to display numbered instructions.
+This way of accomplishing the task is incredibly tedious. Knowing how a `for-in` loop works, you can iterate over each value in the array of strings. You also need the index of the value in the array because you want to display numbered instructions.
 
 If steps need to be added, removed, or changed at a particular index in the array, then you also need to know what the index of the value is. When you have a simple list of unchanging values, then maybe this is simple, but with a larger list processed in a loop, there is another way, the `.enumerate` method that you call on an array variable.
 
@@ -188,3 +188,5 @@ if toMakeTea.count > 6 {
 This checks to see if the size of the array is greater than 6, and if so removes the value at index 6.
 
 [View this lesson on Learn.co](https://learn.co/lessons/ArrayMethods)
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/swift-arrayMethods-readme'>Array Methods</a> on Learn.co and start learning to code for free.</p>
