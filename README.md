@@ -150,7 +150,7 @@ print(toMakeTea)
 // ["Add water to kettle", "Boil Water", "Add tea bag to cup", "Wait 3-5 minutes", "Add Milk", "Drink", "Enjoy!"]
 ```
 
-In this example, you use similar syntax from lesson xx to assign the string of text on the right hand side of the `=` to the index in the array on the left hand side, in this case, position `3`.
+In this example, you use subscript syntax to assign the string of text on the right hand side of the `=` to the index in the array on the left hand side, in this case, position `3`.
 
 ## Removing items from an array
 
@@ -188,3 +188,5 @@ if toMakeTea.count > 6 {
 This checks to see if the size of the array is greater than 6, and if so removes the value at index 6.
 
 [View this lesson on Learn.co](https://learn.co/lessons/ArrayMethods)
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/swift-arrayMethods-readme'>Array Methods</a> on Learn.co and start learning to code for free.</p>
