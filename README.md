@@ -150,7 +150,7 @@ print(toMakeTea)
 // ["Add water to kettle", "Boil Water", "Add tea bag to cup", "Wait 3-5 minutes", "Add Milk", "Drink", "Enjoy!"]
 ```
 
-In this example, you use similar syntax from lesson xx to assign the string of text on the right hand side of the `=` to the index in the array on the left hand side, in this case, position `3`.
+In this example, you use similar syntax to assign the string of text on the right hand side of the `=` to the index in the array on the left hand side, in this case, position `3`.
 
 ## Removing items from an array
 
