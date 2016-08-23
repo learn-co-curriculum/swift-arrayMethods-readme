@@ -4,11 +4,15 @@
 
 > We delight in the beauty of the butterfly, but rarely admit the changes it has gone through to achieve that beauty. -[Maya Angelou](https://en.wikipedia.org/wiki/Maya_Angelou)
 
+## Overview
+
+We'll cove various methods that you can use to add, insert, remove, and change elements in an array. 
+
 ## Learning Objectives 
 - Add element to the end of the array using `append()`
 - Insert an element at the specified index using `insert(_:atIndex:)`
 - Remove an element at the specified index using `removeAtIndex()`
-- Use _Subscript Syntax_ to change elements at a specified index and access the element at a specified index to store in a variable.
+- Use _Subscript Syntax_ to change elements at a specified index and access the element at a specified index to store in a variable
 
 # Methods
 
@@ -139,7 +143,7 @@ print(toMakeTea)
 
 Note that this doesn't replace the item at index `0`, but **inserts** it, shifting all the elements to the right of it one place in the index.
 
-## Change items in an array
+## Changing items in an array
 
 Uh oh, unless you like strong tea, waiting ten minutes is way too long, so let's change that value:
 
@@ -187,6 +191,5 @@ if toMakeTea.count > 6 {
 
 This checks to see if the size of the array is greater than 6, and if so removes the value at index 6.
 
-[View this lesson on Learn.co](https://learn.co/lessons/ArrayMethods)
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/swift-arrayMethods-readme'>Array Methods</a> on Learn.co and start learning to code for free.</p>
