@@ -73,11 +73,11 @@ for (index, step) in toMakeTea.enumerate() {
 // 5\. Drink
 ```
 
-In this example you first create an array of the steps to make tea (and yes, there are intentional mistakes!) and add a couple of extra things to the `for in` loop. First inside the brackets you add variables to hold the index and value variables, the names of these are up to you. Using `index` is of course a useful name, but you can call it whatever you want. At the end of the array variable you want to iterate through, add the `.enumerate()` method. Now inside the loop you have access to the value in the current iteration as well as it's index in the array. Above, you add '1' to the index value as unlike computers, humans don't count from 0!
+In this example you first create an array of the steps to make tea (and yes, there are intentional mistakes!) and add a couple of extra things to the `for in` loop. First, inside the brackets you add variables to hold the index and value variables, the names of these are up to you. Using `index` is of course a useful name, but you can call it whatever you want. At the end of the array variable you want to iterate through, add the `.enumerate()` method. Now inside the loop you have access to the value in the current iteration as well as its index in the array. Above, you add '1' to the index value as unlike computers, humans don't count from 0!
 
 ## Check an array has values
 
-Before undertaking any further actions, it's a good idea to check the array you would like to work with actually has any values in it. Of course there's a method to help, `.isEmpty`.
+Before undertaking any further actions, it's a good idea to check if the array you would like to work with actually has any values in it. Of course there's a method to help, `.isEmpty`.
 
 ```swift
 if toMakeTea.isEmpty {
@@ -89,7 +89,7 @@ if toMakeTea.isEmpty {
 // prints "No tea yet :("
 ```
 
-This method checks to see if the array contains any values, but the array still needs to actually exist (i.e. it's you have initiated it) in the first place.
+This method checks to see if the array contains any values, but the array still needs to actually exist (i.e. if you have initiated it) in the first place.
 
 ![Array not Initialized](http://i.imgur.com/x82qniD.png)
 
@@ -105,7 +105,7 @@ if !toMakeTea.isEmpty {
 }
 ```
 
-This may seem confusing syntax, but it may feel more natural to start with a preferred or default status and then handle the alternative or fallback status.
+This may seem like confusing syntax, but it may feel more natural to start with a preferred or default status and then handle the alternative or fallback status.
 
 ## Array Size
 
@@ -189,7 +189,7 @@ if toMakeTea.count > 6 {
 }
 ```
 
-This checks to see if the size of the array is greater than 6, and if so removes the value at index 6.
+This checks to see if the size of the array is greater than 6, and if so, removes the value at index 6.
 
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/swift-arrayMethods-readme'>Array Methods</a> on Learn.co and start learning to code for free.</p>
