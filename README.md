@@ -6,7 +6,7 @@
 
 ## Overview
 
-We'll cove various methods that you can use to add, insert, remove, and change elements in an array. 
+We'll cover various methods that you can use to add, insert, remove, and change elements in an array. 
 
 ## Learning Objectives 
 - Add element to the end of the array using `append()`
