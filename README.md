@@ -36,7 +36,7 @@ The `.append()` method adds a value to the end of an array. You could achieve th
 
 Before going any further, there's one other array concept to introduce.
 
-Say you have an array of string literals which represent a list of instructions to create great tea. If you want to print these instructions, you would need to do the following:
+Say you have an array of string literals that represent a list of instructions to create great tea. If you want to print these instructions, you would need to do the following:
 
 ```swift
 var toMakeTea = [
