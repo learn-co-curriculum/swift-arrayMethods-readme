@@ -10,8 +10,8 @@ We'll cover various methods that you can use to add, insert, remove, and change 
 
 ## Learning Objectives 
 - Add element to the end of the array using `append()`
-- Insert an element at the specified index using `insert(_:atIndex:)`
-- Remove an element at the specified index using `removeAtIndex()`
+- Insert an element at the specified index using `insert(_:at:)`
+- Remove an element at the specified index using `remove(at:)`
 - Use _Subscript Syntax_ to change elements at a specified index and access the element at a specified index to store in a variable
 
 # Methods
@@ -20,7 +20,7 @@ Take a look at the following:
 
 ```swift
 let greeting = "Hello"
-let loudGreeting = greeting.uppercaseString
+let loudGreeting = greeting.uppercased()
 
 print(loudGreeting)
 // prints "HELLO"
@@ -28,7 +28,7 @@ print(loudGreeting)
 
 This is an example of a 'method', which can be thought of as a pre-written function that helps you accomplish common tasks.
 
-You also saw `.append` in the last lesson, which is another method. Whilst there are some common methods, many are contextual and only work on particular types. For example, a method like `.append` that works on an array will not work for a String, and `.uppercaseString` will not work on an array.
+You also saw `.append` in the last lesson, which is another method. Whilst there are some common methods, many are contextual and only work on particular types. For example, a method like `.append` that works on an array will not work for a String, and `.uppercased()` will not work on an array.
 
 The `.append()` method adds a value to the end of an array. You could achieve this in several ways which would involve far more code and calculation, I think you'll agree that `.append()` is far more convenient. There are many other methods for arrays, and in this lesson you'll look at some others.
 
@@ -58,11 +58,11 @@ print("2\. \(toMakeTea[1])")
 
 This way of accomplishing the task is incredibly tedious. Knowing how a `for-in` loop works, you can iterate over each value in the array of strings. You also need the index of the value in the array because you want to display numbered instructions.
 
-If steps need to be added, removed, or changed at a particular index in the array, then you also need to know what the index of the value is. When you have a simple list of unchanging values, then maybe this is simple, but with a larger list processed in a loop, there is another way, the `.enumerate` method that you call on an array variable.
+If steps need to be added, removed, or changed at a particular index in the array, then you also need to know what the index of the value is. When you have a simple list of unchanging values, then maybe this is simple, but with a larger list processed in a loop, there is another way, the `.enumerated` method that you call on an array variable.
 
 ```swift
 
-for (index, step) in toMakeTea.enumerate() {
+for (index, step) in toMakeTea.enumerated() {
     print("\(index + 1). \(step)")
 }
 
@@ -135,7 +135,7 @@ The `.append()` method adds a new value (which has to also be the same type as e
 You have also forgotten an important step at the beginning of the list, adding water to the kettle, so let's add it:
 
 ```swift
-toMakeTea.insert("Add water to kettle", atIndex: 0)
+toMakeTea.insert("Add water to kettle", at: 0)
 
 print(toMakeTea)
 // ["Add water to kettle", "Boil Water", "Add tea bag to cup", "Wait ten minutes", "Add Milk", "Drink", "Enjoy!"]
@@ -161,7 +161,7 @@ In this example, you use similar syntax to assign the string of text on the righ
 Drinking tea is a serious business, so you've decided to remove the 'Enjoy!' step. Setting that index in the array's value to be empty, i.e. "", is not enough to remove it, but there's a method that helps.
 
 ```swift
-toMakeTea.removeAtIndex(6)
+toMakeTea.remove(at:6)
 
 print(toMakeTea)
 // ["Add water to kettle", "Boil Water", "Add tea bag to cup", "Wait 3-5 minutes", "Add Milk", "Drink"]
@@ -172,10 +172,10 @@ The `removeAtIndex()` method removes the value in the array at position 6 and th
 Note that if you try to access or change the value of an index in the array that doesn't exist, you will receive an error. Try these commands in a Playground and see:
 
 ```swift
-toMakeTea.removeAtIndex(6)
+toMakeTea.remove(at:6)
 print(toMakeTea[6])
 // Error
-toMakeTea.removeAtIndex(6)
+toMakeTea.remove(at:6)
 // Error
 ```
 
@@ -183,7 +183,7 @@ To prevent this error, you could combine the code above with some `if else` stat
 
 ```swift
 if toMakeTea.count > 6 {
-    toMakeTea.removeAtIndex(6)
+    toMakeTea.remove(at: 6)
 } else {
     print("There is no value at index 6")
 }
